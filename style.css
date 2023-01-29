@@ -1,0 +1,25 @@
+label {
+  display: block;
+  width: calc(100vw/2 - 2vw*2);
+}
+
+ol {
+  padding: 0;
+  list-style-type: none;
+}
+
+li {
+  display: flex;
+}
+
+input {
+  width: calc(100vw/2 - 2vw*2);
+}
+
+audio {
+  width: calc(100vw/2 - 2vw*2);
+}
+
+body {
+  padding: 5vh 2vw;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Web Audio Capture Methods Demo</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+
+<body>
+  <p>
+    There are lots of methods you theoretically can capture audio using web standards. Each of these methods is an
+    attempt mainly at trying to get iOS Safari to do... pretty much anything. As of 4/13/17, mobile Safari seems to only
+    work by recording a video via the camera app and using that to play back in the <code>audio</code> element. WebRTC
+    is currently unsupported by any version of Safari, but works fine across the other browsers I've tested.
+  </p>
+  <section>
+    <h2>testing <code>audio/*</code></h2>
+
+    <ol>
+      <li>
+        <label for="recorder1">Record sound here 👉</label>
+        <input name="audioCapture" type="file" accept="audio/*" id="recorder1" capture>
+      </li>
+      <li>
+        <label for="player1">Then play it here 👉</label>
+        <audio id="player1" controls></audio>
+      </li>
+    </ol>
+  </section>
+  <section>
+    <h2>testing <code>video/*</code></h2>
+
+    <ol>
+      <li>
+        <label for="recorder2">Record video here 👉</label>
+        <input name="audioCapture" type="file" accept="video/*" id="recorder2" capture>
+      </li>
+      <li>
+        <label for="player2">Then play audio here 👉</label>
+        <audio id="player2" controls></audio>
+      </li>
+    </ol>
+  </section>
+  <section>
+    <h2>testing <code>video/*</code> w/ <code>capture="user"</code></h2>
+
+    <ol>
+      <li>
+        <label for="recorder3">Record video here 👉</label>
+        <input name="audioCapture" type="file" accept="video/*" id="recorder3" capture="user">
+      </li>
+      <li>
+        <label for="player3">Then play audio here 👉</label>
+        <audio id="player3" controls></audio>
+      </li>
+    </ol>
+  </section>
+  <section>
+    <h2>testing <code>WebRTC</code></h2>
+    <ol>
+      <li>
+        <label for="recorder4">Record sound here 👉</label>
+        <input type="button" accept="audio/*" id="recorder4" value="Record">
+      </li>
+      <li>
+        <label for="player4">Then play it here 👉</label>
+        <audio id="player4" controls></audio>
+      </li>
+    </ol>
+  </section>
+
+  <script src='https://cdn.WebRTC-Experiment.com/RecordRTC.js'></script>
+  <script src='https://cdn.webrtc-experiment.com/gumadapter.js'></script>
+  <script src="./script.js"></script>
+
+</body>
+
+</html>
